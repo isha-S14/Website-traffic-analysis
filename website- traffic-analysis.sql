@@ -1,1 +1,36 @@
+/* TOTAL PAGE VIEWS OVER TIME 
+
+   /*  THIS RETRIEVES THE TOTAL NUMBER OF PAGE VIEWS PER DAY 
+
+SELECT DATE(timestamp) AS visit_date, COUNT(*) AS Total_page_views 
+FROM web_traffic
+GROUP BY visit_date 
+ORDER BY visit_date;
+
+
+/* TRAFFIC SOURCE BREAKDOWN 
+
+   /* IDENTIFIES WHICH SOURCES ORGANIC, DIRECT, REFERRAL, SOCIAL BRINK IN THE MOST TRAFFIC
+
+SELECT traffic_source, COUNT(*) AS total_visit
+FROM web_traffic
+GROUP BY traffic_source 
+ORDER BY total_vsit DESC;
+
+/*  AVERAGE SESSION  DURATION 
+ 
+  /* THE AVERAGE SESSION DURATION PER USER
+
+SELECT user_id, AVG(session_duration) AS avg_session_duration
+FROM user_sessions
+GROUP BY  user_id
+ORDER BY avg_session_duration DESC; 
+
+/* BOUNCE RATE CALCULATION 
+
+  /* BOUNCE RATE IS CALCULATED AS SINGLE PAGE SESSION DIVIDED BY TOTAL SESSIONS 
+
+SELECT
+      COUNT(
+
 
